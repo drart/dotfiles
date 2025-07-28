@@ -1,0 +1,38 @@
+  ;; home row-mods
+
+  ;; un-mapped keys behave as normally
+  (defcfg
+    process-unmapped-keys yes
+  )
+
+  ;; define the keys to remap
+  (defsrc
+   tab caps a s d f g h j k l ; lsft rsft
+  )
+
+  ;; define values for tap time and hold time
+  (defvar
+    tap-time 150
+    hold-time 200
+  )
+
+  ;; alias definitions
+  (defalias
+    tablayer (tap-hold $tap-time $tap-time tab (layer-while-held vim))
+    a (tap-hold $tap-time $hold-time a lctrl)
+    s (tap-hold $tap-time $hold-time s lsft) ;; lalt
+    d (tap-hold $tap-time $hold-time d lalt) ;; lmet
+    f (tap-hold $tap-time $hold-time f lmet)
+    j (tap-hold $tap-time $hold-time j rmet)
+    k (tap-hold $tap-time $hold-time k ralt)
+    l (tap-hold $tap-time $hold-time l rsft)
+    ; (tap-hold $tap-time $hold-time ; rctrl)
+  )
+
+  (deflayer base
+    esc @tablayer @a @s @d @f g h @j @k @l @; grv \
+  )
+
+  (deflayer vim
+    esc - @a @s @d @f g lft down up rght @; grv \
+  )
