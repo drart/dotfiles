@@ -1,0 +1,70 @@
+leader_key = "f18"        # required, the leader key that starts the sequence
+# leader_key_mods = ""      # optional, default "", not recommended - a dedicated leader key is better
+                             # supports cmd ctrl alt shift
+auto_reload = true        # optional, default true, reload when any file in this directory is saved
+toast_on_reload = true    # optional, default false, show a toast when the config is reloaded
+show_ui = true            # optional, default true, show the ui with your key maps
+key_maps_per_line = 1     # optional, default 5, number of key maps per line in the ui
+
+t = "iTerm"
+s = "Safari"
+c = "Google Chrome"
+"`" = ["shortcut:cmd ctrl space", "Emojis"]
+n = ["menu:Finder|File>New Finder Window", "Finder Window"] 
+
+# urls 
+g = "https://google.com" # urls go to velja (I have this set up for a prompt)
+y = ["cmd:open 'velja:open?url=https://youtube.com&app=com.apple.Safari'", "Youtube"]
+
+
+
+# Window management courtesy of Aerospace
+[w]
+label = "[Aerospace]"
+v = ["cmd:/opt/homebrew/bin/aerospace volume mute-toggle", "Mute"]
+t = ["cmd:/opt/homebrew/bin/aerospace layout floating tiling", "Float Toggle"]
+f = ["cmd:/opt/homebrew/bin/aerospace fullscreen", "Fullscreen"]
+
+[w.m]
+label = "[Move]"
+j = ["cmd:/opt/homebrew/bin/aerospace move down", "Down"]
+k = ["cmd:/opt/homebrew/bin/aerospace move up", "Down"]
+h = ["cmd:/opt/homebrew/bin/aerospace move left", "left"]
+l = ["cmd:/opt/homebrew/bin/aerospace move right", "right"]
+a = ["cmd:/opt/homebrew/bin/aerospace move-node-to-workspace A", "a"]
+s = ["cmd:/opt/homebrew/bin/aerospace move-node-to-workspace S", "s"]
+
+[o]
+label = "[Obsidian]"
+o = "Obsidian"
+d = ["cmd:open obsidian://adv-uri?commandid=app%3Adelete-file", "Delete"]
+l = ["menu:Obsidian|View>Left Sidebar", "Left Sidebar"]
+r = ["menu:Obsidian|View>Right Sidebar", "Right Sidebar"]
+# Requires the daily note and the advanced-uri plugins
+p = ["cmd:open obsidian://adv-uri?commandid=daily-notes%3Agoto-prev", "Previous Daily Note"]
+m = ["cmd:open obsidian://adv-uri?commandid=file-explorer%3Amove-file", "Move Folder"] 
+
+
+# this group is handy to copy over
+# for quick access to your config
+[h]
+label = "[hammerspoon]"
+r = "reload" # reserved for reloading your hammerspoon config (helpful when auto_reload is false)
+z = ["hs:hs.alert('Hello, world!')", "Hello"]
+n = ["hs:hs.notify.new({title='Hammerspoon', informativeText='Hello World'}):send()", "Hello Notifications"]
+c = ["hs:confetti.start()", "Confetti"]
+p = ["hs:spoon.Cherry:start()", "Pomodoro"]
+
+
+[z]
+label = "[Utilities]"
+d = ["shortcut:option cmd d", "Dock"]
+# m = ["shortcut:ctrl fn f2", "Menu"] # Not working - try this out with a key remap in kanata
+
+[z.s]
+label = "[Screenshots]"
+s = ["shortcut:shift cmd ctrl 3", "Buffer"]
+f = ["shortcut:shift cmd 3", "File"]
+a = ["shortcut:shift cmd 4", "Area to File"]
+b = ["shortcut:shift cmd ctrl 4", "Area to Buffer"]
+o = ["shortcut:shift cmd 5", "Options"]
